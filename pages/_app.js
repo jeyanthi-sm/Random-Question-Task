@@ -3,6 +3,7 @@ import MathInput from "../components/MathInput/MathInput";
 import { useState } from "react";
 import "../public/styles/globals.css";
 import { evaluateTex } from "tex-math-parser";
+import GenQuestion from "../components/Question/GenQuestion";
 
 export default function App({}) {
   const [memory, setMemory] = useState({});
@@ -25,15 +26,7 @@ export default function App({}) {
       >
         {/* <StaticMath latex={`\\text{The <StaticMath /> component can be used to write text inline with latex equations: } x^2 + 3x - 2`} />
                 <StaticMath latex={`\\text{Generate a random question and display it here.}`} /> */}
-        <StaticMath
-          latex={`\\text{3 kg of potatoes and 4 kg of carrots have a total cost of 440p.}`}
-        />
-        <StaticMath
-          latex={`\\text{4 kg of potatoes and 3 kg of carrots have a total cost of 470p}`}
-        />
-        <StaticMath
-          latex={`\\text{What is the total cost of 1 kg of potatoes and 1kg of carrots}`}
-        />
+        <GenQuestion />
         <br />
         <br />
         {solutionShown ? (
