@@ -10,17 +10,15 @@ const QuestionClientSide = dynamic(
 );
 
 export default function GenQuestion({ className, latex, style }) {
+  let firstLine, secondLine, thirdLine;
+  firstLine = `3 kg of potatoes and 4 kg of carrots have a total cost of 440p`;
+  secondLine = `4 kg of potatoes and 3 kg of carrots have a total cost of 470p`;
+  thirdLine = `What is the total cost of 1 kg of potatoes and 1 kg of carrots`;
   return (
     <>
-      <StaticMath
-        latex={`\\text{3 kg of potatoes and 4 kg of carrots have a total cost of 440p.}`}
-      />
-      <StaticMath
-        latex={`\\text{4 kg of potatoes and 3 kg of carrots have a total cost of 470p}`}
-      />
-      <StaticMath
-        latex={`\\text{What is the total cost of 1 kg of potatoes and 1 kg of carrots}`}
-      />
+      <StaticMath latex={`\\text{${firstLine}}`} />
+      <StaticMath latex={`\\text{${secondLine}}`} />
+      <StaticMath latex={`\\text{${thirdLine}}`} />
     </>
   );
 }
