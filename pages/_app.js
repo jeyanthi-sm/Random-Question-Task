@@ -8,13 +8,14 @@ import GenQuestion from "../components/Question/GenQuestion";
 export default function App({}) {
   const [memory, setMemory] = useState({});
   const [solutionShown, setSolutionShown] = useState(false);
-
+  console.log(memory);
   function addToMemory(newValue) {
     setMemory((prev) => {
+      console.log(prev);
+      console.log(newValue);
       return { ...prev, ...newValue };
     });
   }
-
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
@@ -24,20 +25,15 @@ export default function App({}) {
           marginTop: "50px",
         }}
       >
-        {/* <StaticMath latex={`\\text{The <StaticMath /> component can be used to write text inline with latex equations: } x^2 + 3x - 2`} />
-                <StaticMath latex={`\\text{Generate a random question and display it here.}`} /> */}
         <GenQuestion />
         <br />
         <br />
-        {solutionShown ? (
-          <StaticMath latex={`\\text{Display the solution here}`} />
-        ) : (
-          ""
-        )}
+        {solutionShown ? <StaticMath latex={`\\text{5}`} /> : ""}
+
         <br />
         <br />
         <MathInput
-          buttons={["power", "times"]}
+          buttons={["pound"]}
           markingFunction={markingFunction}
           memKey="mathinput1"
           memory={memory}
