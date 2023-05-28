@@ -3,7 +3,7 @@ import MathInput from "../components/MathInput/MathInput";
 import { useState } from "react";
 import "../public/styles/globals.css";
 import { evaluateTex } from "tex-math-parser";
-import GenQuestion from "../components/Question/GenQuestion";
+import GenQuestion from "../components/Question/GenerateQuestion";
 
 export default function App({}) {
   const [memory, setMemory] = useState({});
